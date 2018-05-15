@@ -1,7 +1,7 @@
 # GAN
 
 ## 01 Basic GAN
- * (Basic GAN)[https://github.com/stesha2016/GAN/blob/master/tensorflow_GAN_basic.ipynb]
+ * ［Basic GAN（https://github.com/stesha2016/GAN/blob/master/tensorflow_GAN_basic.ipynb）
  * 最基础的GAN网络，全部使用FC进行网络连接
  * D网是［None, 784］ -> [1]
    G网是［None, 100］ -> [784]
