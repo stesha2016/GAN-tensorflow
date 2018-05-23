@@ -10,3 +10,19 @@
  * D和G同时训练20000次，虽然开始出现数字的雏形，但是效果并不是太理想。
  ![0次迭代](https://github.com/stesha2016/GAN/blob/master/image/01_00.png)
  ![1800次迭代](https://github.com/stesha2016/GAN/blob/master/image/01_01.png)
+
+## 02 DCGAN
+ * [DCGAN MNIST](https://github.com/stesha2016/GAN/blob/master/tensorflow_DCGAN_MNIST_02.ipynb)
+ * 引入了卷积运算，通过实验得出一套效果相对不错的模型
+ * D网［None, 64, 64, 1］ -> [None, 32, 32, 128] -> [None, 16, 16, 256] -> [None, 8, 8, 512] -> [None, 4, 4, 1024] -> [None, 1, 1, 1]
+   G网[None, 1, 1, 100] -> [None, 4, 4, 1024] -> [None, 8, 8, 512] -> [None, 16, 16, 256] -> [None, 32, 32, 128] -> [None, 64, 64, 1]
+ * 关键点：
+   1. 每一层除了out层，都必须加上batch normalization.
+   2. Loss函数与原始GAN一样.
+   3. 使用lrelu效果会更好.
+   4. 训练一次D网，训练两次G网效果会好一些.
+ * 缺点：
+   1. 训练过程不稳定，很有可能D网的loss会降到特别小，而G网的loss上升，D网约束不了G网了。
+   2. 有时候G网生成的图片多样性不足。
+ * 效果：
+   ！［15次epoch的效果］（https://github.com/stesha2016/GAN/blob/master/image/DCGAN.png）
