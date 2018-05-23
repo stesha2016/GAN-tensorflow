@@ -26,4 +26,4 @@
    2. 有时候G网生成的图片多样性不足。
    3. 没有一个值衡量结果的好坏，Dloss与Gloss似乎要达到一种平衡才可以。
  * 效果：
-   ![15次epoch的效果](https://github.com/stesha2016/GAN/blob/master/image/DCGAN.png)
+ ![15次epoch的效果](https://github.com/stesha2016/GAN/blob/master/image/DCGAN.png)
