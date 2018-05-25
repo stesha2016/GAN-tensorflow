@@ -40,4 +40,5 @@
  * 优点就是明显网络稳定很多，相对DCGAN更容易收敛，一般不会出现GAN网D_loss降到特别小而无法约束G网的情况
  * 缺点：对D网的参数范围进行限制后，很容易训练出D网的参数就集中在c值或者-c值上，而不是在-c到c之间，针对这点的改进就是WGAN-GP
  * 效果：
+ 
  ![WGAN效果](https://github.com/stesha2016/GAN/blob/master/image/WGAN-01.png)
