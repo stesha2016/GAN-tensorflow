@@ -41,4 +41,5 @@
  * 缺点：对D网的参数范围进行限制后，很容易训练出D网的参数就集中在c值或者-c值上，而不是在-c到c之间，针对这点的改进就是WGAN-GP
  * 效果：
  
+ ![初始图片](https://github.com/stesha2016/GAN/blob/master/image/WGAN-02.png)
  ![WGAN效果](https://github.com/stesha2016/GAN/blob/master/image/WGAN-01.png)
