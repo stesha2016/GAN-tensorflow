@@ -28,3 +28,16 @@
  * 效果：
  
  ![15次epoch的效果](https://github.com/stesha2016/GAN/blob/master/image/DCGAN.png)
+
+## 03 WGAN（Wasserstein GAN）
+ * [WGAN](https://github.com/stesha2016/GAN/blob/master/tensorflow_WGAN_CIFAR-10_03.ipynb)
+ * WGAN 作者通过数学推导，证明了GAN的缺陷，然后针对缺陷进行了改进，网络模型基本不变
+ * 关键点：
+   1. D网最后一层去掉sigmoid
+   2. D网和G网的loss不取log
+   3. 每次更新D网的参数后，把他们的绝对值截断到不超过一个固定常数c
+   4. 不用Adam，用RMSProp或者SGD
+ * 优点就是明显网络稳定很多，相对DCGAN更容易收敛，一般不会出现GAN网D_loss降到特别小而无法约束G网的情况
+ * 缺点：对D网的参数范围进行限制后，很容易训练出D网的参数就集中在c值或者-c值上，而不是在-c到c之间，针对这点的改进就是WGAN-GP
+ * 效果：
+ ![WGAN效果](https://github.com/stesha2016/GAN/blob/master/image/WGAN-01.png)
