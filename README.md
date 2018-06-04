@@ -45,4 +45,16 @@
  ![WGAN效果](https://github.com/stesha2016/GAN/blob/master/image/WGAN-01.png)
  
 ## 04 WGAN-GP
- * [WGAN-GP](https://github.com/stesha2016/GAN/blob/master/tensorflow_WGAN2_ANIME_04.ipynb)
+ * [WGAN-GP](https://github.com/stesha2016/GAN/blob/master/tensorflow_WGANGP_ANIME_04.ipynb)
+ * 针对WGAN的D网训练出来的参数很容易集中在c值或者-c值上的缺点，而出现了WGAN-GP。取消了D网参数的截断，而对D网的loss增加了一个惩罚值
+ * 关键点：
+   1. 对D网的loss增加了一个penalty的值
+      mix = real + epsilon*(fake-real)
+      D_mix = discriminator(mix)
+      grad = tf.gradients(D_mix, mix)[0]
+      slopes = tf.sqrt(tf.reduce_sum(tf.square(grad), axis=[1, 2, 3]))
+      penalty = tf.reduce_mean(tf.square(slopes - 1))
+      D_loss = D_loss_fake - D_loss_real + 10*penalty
+   2. D网不使用batch normalization
+   3. 调试下来，不使用bias效果会更好
+ * 效果：
