@@ -43,3 +43,6 @@
  
  ![初始图片](https://github.com/stesha2016/GAN/blob/master/image/WGAN-02.png)
  ![WGAN效果](https://github.com/stesha2016/GAN/blob/master/image/WGAN-01.png)
+ 
+## 04 WGAN-GP
+ * [WGAN-GP](https://github.com/stesha2016/GAN/blob/master/tensorflow_WGAN2_ANIME_04.ipynb)
