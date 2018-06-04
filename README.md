@@ -57,4 +57,6 @@
       D_loss = D_loss_fake - D_loss_real + 10*penalty
    2. D网不使用batch normalization
    3. 调试下来，不使用bias效果会更好
- * 效果：
+ * 有些动漫人物的脸部生成的效果很不错：
+  ![图片1](https://github.com/stesha2016/GAN/blob/master/image/wgan-gp1.png)
+  ![图片2](https://github.com/stesha2016/GAN/blob/master/image/wgan-gp2.png)
