@@ -60,3 +60,11 @@
  * 迭代100多个epoch，有些动漫人物的脸部生成的效果很不错：
   ![图片1](https://github.com/stesha2016/GAN/blob/master/image/wgan-gp1.png)
   ![图片2](https://github.com/stesha2016/GAN/blob/master/image/wgan-gp2.png)
+  
+## 05 pix2pix
+ * [pix2pix](https://github.com/stesha2016/GAN/blob/master/tensorflow_pix2pix_FACADES_05.ipynb)
+ * 跟上面的GAN算法开始有了差别，这个算法不再是从噪点生成图片了，而是通过图片生成图片，这样可以学习两个图片之间关联的风格，因为有A和B两类图片，所以在设计G网和D网时需要同时考虑两种图片进行训练
+ * D网的输入是将A和B两类图片concat后进行训练， ［None, 256, 256, 3］, [None, 256, 256, 3] -> [None, 256, 256, 6]， 最后的output是[None, 30, 30, 1]
+ * G网是标准的UNET，用递归的方式实现是最合适的，因为在降维和升维过程中对应位置尺寸的数据还需要进行一次concat，input是[None, 256, 256, 3], output也是[None, 256, 256, 3]
+ * 这个网络可以做很多有趣的事情，可以做风格迁移的效果。比如涂色，通过线条画图等等。
+ * Loss就是普通的crossentropy，不过加了一个fake图片和realB的差值作为L1 loss。 L1 loss基本上可以比较清晰的衡量网络训练的效果。
