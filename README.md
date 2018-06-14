@@ -69,3 +69,14 @@
  * 这个网络可以做很多有趣的事情，可以做风格迁移的效果。比如涂色，通过线条画图等等。
  * Loss就是普通的crossentropy，不过加了一个fake图片和realB的差值作为L1 loss。 L1 loss基本上可以比较清晰的衡量网络训练的效果。
  * 用batchnorm就不用bias，不用batchnorm就用bias。
+
+## 06 CycleGAN
+ * [CycleGAN](https://github.com/stesha2016/GAN-tensorflow/blob/master/tensorflow_CycleGAN_06.ipynb)
+ * CycleGAN网络结构和pix2pix基本一样，增加了一个反向的过程。 A -> B, B > A
+ * 网络有四个A->B的G网，B->A的G网，判定A的D网和判定B的D网
+ * A --(GA)--> fakeB --(GB)--> recA
+ * B --(GB)--> fakeA --(GA)--> recB
+ * A&&fakeA&&recA一起用DA进行判定，B&&fakeB&&recB用DB进行判定
+ * 这样前后互相约束生成的图片效果会比pix2pix好，而且A与B的图片并不需要是完全对应的图片。比如A1可以和B2进行对应，也可以和B3或者B4进行对应。
+ * ![pic1](https://github.com/stesha2016/GAN-tensorflow/blob/master/image/c1.png) ![pic2](https://github.com/stesha2016/GAN-tensorflow/blob/master/image/c3.png) ![pic3](https://github.com/stesha2016/GAN-tensorflow/blob/master/image/c2.png) ![pic4](https://github.com/stesha2016/GAN-tensorflow/blob/master/image/c4.png)
+ * 50个epoch的horse2zebra数据的效果，可以看到场景比较单一的情况下效果会好一些
