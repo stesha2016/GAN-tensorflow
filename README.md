@@ -81,4 +81,4 @@
  * ![pic1](https://github.com/stesha2016/GAN-tensorflow/blob/master/image/c1.png) ![pic2](https://github.com/stesha2016/GAN-tensorflow/blob/master/image/c3.png) ![pic3](https://github.com/stesha2016/GAN-tensorflow/blob/master/image/c2.png) ![pic4](https://github.com/stesha2016/GAN-tensorflow/blob/master/image/c4.png)
  * 50个epoch的horse2zebra数据的效果，可以看到场景比较单一的情况下效果会好一些
   * ![pic1](https://github.com/stesha2016/GAN-tensorflow/blob/master/image/c5.png) ![pic2](https://github.com/stesha2016/GAN-tensorflow/blob/master/image/c6.png) ![pic3](https://github.com/stesha2016/GAN-tensorflow/blob/master/image/c7.png) ![pic4](https://github.com/stesha2016/GAN-tensorflow/blob/master/image/c8.png)
- * 100个epoch的monet2photo数据的效果，monet生成photo的效果不如photo生成monet的效果。
+ * 100个epoch的monet2photo数据集的效果，前两张monet2photo,后两张photo2monet,monet生成photo的效果不如photo生成monet的效果。
