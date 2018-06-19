@@ -80,3 +80,5 @@
  * 这样前后互相约束生成的图片效果会比pix2pix好，而且A与B的图片并不需要是完全对应的图片。比如A1可以和B2进行对应，也可以和B3或者B4进行对应。
  * ![pic1](https://github.com/stesha2016/GAN-tensorflow/blob/master/image/c1.png) ![pic2](https://github.com/stesha2016/GAN-tensorflow/blob/master/image/c3.png) ![pic3](https://github.com/stesha2016/GAN-tensorflow/blob/master/image/c2.png) ![pic4](https://github.com/stesha2016/GAN-tensorflow/blob/master/image/c4.png)
  * 50个epoch的horse2zebra数据的效果，可以看到场景比较单一的情况下效果会好一些
+  * ![pic1](https://github.com/stesha2016/GAN-tensorflow/blob/master/image/c5.png) ![pic2](https://github.com/stesha2016/GAN-tensorflow/blob/master/image/c6.png) ![pic3](https://github.com/stesha2016/GAN-tensorflow/blob/master/image/c7.png) ![pic4](https://github.com/stesha2016/GAN-tensorflow/blob/master/image/c8.png)
+ * 100个epoch的monet2photo数据的效果，monet生成photo的效果不如photo生成monet的效果。
